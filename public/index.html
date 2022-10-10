@@ -8,12 +8,20 @@
     <title>My app</title>
 </head>
 <body>
-    <H2>Contacts: </H2>
+    <H2>Contacts</H2>
+    <input type="text" id="input">
     <button onclick="contacts()">Get contacts</button>
     <div id="data">
         <ul id="ul">
             
         </ul>
     </div>
+    <hr>
+    <form action="" method="post">
+        <input type="text" name="name" id="inputName">
+        <input type="text" name="number" id="inputNumber">
+        <button onclick="newContact()">Add new contact</button>
+
+    </form>
 </body>
 </html>

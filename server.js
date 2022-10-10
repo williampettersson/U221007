@@ -1,3 +1,4 @@
+const { response } = require('express');
 const express = require('express');
 const fs = require('fs');
 
@@ -12,16 +13,17 @@ server.get("/", (req,res) => {
     });
 });
 
+server.post('/', (req,res) => {
+    console.log(req.forms);
+    res.send('OK!');
+});
+
 server.get('/contacts', (req,res) => {
-    Contacts = [
-    {
-        'Name': 'William',
-        'Age': '19' 
-        
-    }];
-    res.writeHead(200, {'Content-Type': 'text/json'});
-    res.write(JSON.stringify(Contacts));
+    fs.readFile('data.json', (err, data) => {
+    res.writeHead(200, {'Content-Type': 'application/json'});
+    res.write(data);
     res.end();
+    });
 });
 
 server.listen(8080);

@@ -6,10 +6,14 @@ contacts = () => {
        Contacts.forEach(c => {
         
         var list = document.createElement('li');
-        list.innerHTML = (`${c.Name} ${c.Age}`);
+        list.innerHTML = (`${c.Name} ${c.Number}`);
         ul.appendChild(list);    
        });
     };
     XHR.open('GET', '/contacts');
     XHR.send();
+}
+
+newContact = () => {
+    
 }
